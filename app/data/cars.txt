@@ -1,0 +1,6 @@
+1,Honda,Civic,2018,123456
+2,Renault,Clio,2017,200000
+3,Toyota,Corola,2015,230998
+4,Lexus,RX350,2016,385708
+5,Tesla,Model 3,2019,243u29
+6,Volvo,V40,2016,473299

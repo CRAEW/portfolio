@@ -1,0 +1,32 @@
+<?php include VIEW . 'header.phtml'; ?>
+
+<!-- <a href="portfolio/edit">Edit cars</a>
+<a href="portfolio/delete">Delete cars</a>
+<a href="portfolio/view">View cars</a> -->
+
+<h1>My Portfolio</h1>
+
+<?php if(array_key_exists('portfolio', $this->view_data)) : ?>
+
+    <ul>
+
+        <?php foreach($this->view_data['portfolio'] as $project) : ?>
+            <li> 
+                
+                <a href="<?= $project->url; ?>" target="_blank" rel="noreferrer"><img src="../<?= $project->image; ?>" alt="image"></a>
+                
+
+                <?php foreach($project as $item) : ?>
+                    <p><?= $item ?></p>
+                <?php endforeach; ?>
+            </li>
+        <?php endforeach; ?>
+
+   </ul>
+<?php endif; ?>
+
+
+<?php var_dump($this->view_data['portfolio'][0]); ?>
+
+
+<?php include VIEW . 'footer.phtml'; ?>
