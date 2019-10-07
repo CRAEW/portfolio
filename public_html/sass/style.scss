@@ -2,7 +2,7 @@
 @import 'variables';
 @import 'typography';
 
-// General layout
+// MOBILE FIRST DESIGN
 body {
     width: 100vw;
     height: auto;
@@ -32,7 +32,7 @@ body {
 header {
     background-color: $header-hex;
     width: 100%;
-    height: 50px;
+    height: $height;
     position: relative;
     z-index: 100;
 
@@ -43,13 +43,12 @@ header {
     }
 
     .logo {
-        height: 50px;
-        line-height: 50px;
+        height: $height;
+        line-height: $height;
 
         img {
-            // display: inline-block;
             width: auto;
-            height: 50px;
+            height: $height;
         }
     }
 
@@ -57,35 +56,41 @@ header {
 
 .dropdown-menu-mobile {
     background-color: $dark-bg-hex;
-    width: 50px;
-    height: 50px;
-    color: white;
-    line-height: 50px;
+    width: $height;
+    height: $height;
+    color: $light-txt;
+    line-height: $height;
     text-align: center;
 }
 
 .main-nav {
-    background-color: $header-hex;
-    color: white;
+    background-color: $dark-bg-hex;
+    color: $light-txt;
     height: 100vh;
 
     ul {
+        height: 100%;
         list-style-type: none;
         display: flex;
         flex-direction: column;
-        margin-right: 50px;
+        align-items: center;
+
+        li {
+            width: 100%;
+            text-align: center;
+        }
 
         li a {
+            width: 100%;
             display: inline-block;
-            font-size: 36px;
-            margin-left: 30px;
-            height: 50px;
+            font-size: $font-size * 2.5;
+            line-height: $height;
+            margin-top: $height;
         }
 
         li>.active {
-            background-color: tomato;
-            color: black;
-            padding: 0 10px;
+            background-color: $light-hex;
+            color: $dark-bg-hex;
         }
     }
 }
@@ -96,3 +101,35 @@ img {
     width: 350px;
     height: auto;
 }
+
+// DESKTOP VERSION
+@media only screen and (min-width: 960px) {
+    .dropdown-menu-mobile {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .main-nav {
+        height: $height;
+
+    ul {
+        flex-direction: row;
+        height: $height;
+
+        li {
+
+        }
+
+        li a {
+            margin-top: 0;
+            margin-left: $height;
+        }
+
+        li>.active {
+
+    }
+}}}
