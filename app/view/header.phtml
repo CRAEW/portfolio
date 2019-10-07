@@ -7,21 +7,35 @@
 <html lang="en">
 
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title><?php echo (isset($this->page_title) ? $this->page_title : 'Welcome to my site'); ?></title>
-        <link rel="stylesheet" href="/style.css" media="all">
-        <script defer>
-            console.log('hello world');
-        </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><?php echo (isset($this->page_title) ? $this->page_title : 'Welcome to my site'); ?></title>
+    <!-- Links to scripts and stylesheets -->
+    <link rel="stylesheet" href="/css/style.css" media="all">
+    <script src="https://kit.fontawesome.com/4469be274f.js" crossorigin="anonymous"></script>
+    <script src="/js/scripts.js" defer>
+    </script>
 </head>
 
 <body>
-    <nav class='main-nav'>
-        <ul>
-            <li><a href="/portfolio/index" <?php echo ($action == 'portfolio/index' ? 'class=active' : ''); ?>>Portfolio</a></li>
-            <li><a href="/home/aboutus" <?php echo ($action == 'home/aboutus' ? 'class=active' : ''); ?>>CV</a></li>
-            <li><a href="/home/index" <?php echo ($action == 'home/index' ? 'class=active' : ''); ?>>Contact</a></li>
-        </ul>
-    </nav>
+    <header>
+        <div class="mobile-header">
+            <div class="logo">
+                <img src="/images/logo.jpeg" alt="logo Wendy Van Craen">
+            </div>
+
+            <div id="dropdown-menu-mobile" class="dropdown-menu-mobile"><i class="fa fa-bars"></i></div>
+        </div>
+
+
+        <nav id="main-nav" class='main-nav hidden'>
+            <ul>
+                <li><a href="/portfolio/index"
+                        <?php echo ($action == 'portfolio/index' ? 'class=active' : ''); ?>>Portfolio</a></li>
+                <li><a href="/home/aboutus" <?php echo ($action == 'home/aboutus' ? 'class=active' : ''); ?>>CV</a></li>
+                <li><a href="/home/index" <?php echo ($action == 'home/index' ? 'class=active' : ''); ?>>Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>

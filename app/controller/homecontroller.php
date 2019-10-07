@@ -5,11 +5,7 @@ class homeController extends Controller
     public function index($id='',$name='')
     {
 
-        $this->view('home/index', [
-            'id' => $id,
-            'name' => $name
-            
-        ]);
+        $this->view('home/index', []);
         $this->view->render();
 
     }
