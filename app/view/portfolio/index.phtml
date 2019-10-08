@@ -1,33 +1,47 @@
 <?php include VIEW . 'header.phtml'; ?>
 
-<!-- <a href="portfolio/edit">Edit cars</a>
-<a href="portfolio/delete">Delete cars</a>
-<a href="portfolio/view">View cars</a> -->
+<div class="container">
+    <h1>My Portfolio</h1>
 
-<h1>My Portfolio</h1>
+    <?php if(array_key_exists('portfolio', $this->view_data)) : ?>
 
-<?php if(array_key_exists('portfolio', $this->view_data)) : ?>
-
-    <ul>
-
+    <section class="projects">
         <?php foreach($this->view_data['portfolio'] as $project) : ?>
-            <li> 
-                
-                <a href="<?= $project->url; ?>" target="_blank" rel="noreferrer"><img src="../<?= $project->image; ?>" alt="image"></a>
-                
 
-                <?php foreach($project as $item) : ?>
-                    <p><?= $item ?></p>
-                <?php endforeach; ?>
-            </li>
+        <article class="project-article">
+            <div class="project-img-title">
+                <h2><?= $project->title; ?></h2>
+
+                <a href="<?= $project->url; ?>" target="_blank" rel="noreferrer"><img src="../<?= $project->image; ?>"
+                        alt="image"></a>
+            </div>
+            <div class="project-info">
+                <p>
+                    <strong>Skills: </strong>
+                    <span>
+                        <?= $project->skills?>
+                    </span>
+                </p>
+                <p>
+                    <strong>Description: </strong>
+                    <span>
+                        <?= $project->description?>
+                    </span>
+                </p>
+            </div>
+            <div class="project-btns">
+                <button class="project-website"><a href="<?= $project->url?>" target="_blank" rel="noreferrer">Project >></a></button>
+                <button class="project github"><a href="<?= $project->github?>" target="_blank"
+                        rel="noreferrer">GitHub >></a></button>
+            </div>
+
+
+        </article> <!-- end of article -->
         <?php endforeach; ?>
 
-   </ul>
-<?php endif; ?>
+    </section> <!-- end of projects -->
 
-<p>
-<?php var_dump($this->view_data['portfolio'][0]); ?>
-</p>
-
+    <?php endif; ?>
+</div>
 
 <?php include VIEW . 'footer.phtml'; ?>

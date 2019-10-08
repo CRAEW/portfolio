@@ -5,9 +5,19 @@
 // MOBILE FIRST DESIGN
 body {
     width: 100vw;
+    
     height: auto;
     font-size: $font-size;
     font-family: $body-font;
+    background-image: linear-gradient(to top right, $header-hex, $background-hex, $dark-bg-hex);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: $light-txt;
+
+    .container {
+        margin-top: $height * 2;
+        min-height: 80vh;
+    }
 
     h1,
     h2,
@@ -16,6 +26,20 @@ body {
     h5,
     h6 {
         font-family: $title-font;
+    }
+
+    h1 {
+        font-size: $font-size * 3;
+        text-align: center;
+        margin: $height $height;
+    }
+
+    h2 {
+        font-size: $font-size * 1.2;
+    }
+
+    strong {
+        font-weight: bold;
     }
 
     a {
@@ -31,9 +55,10 @@ body {
 // HEADER
 header {
     background-color: $header-hex;
-    width: 100%;
+    width: 100vw;
     height: $height;
-    position: relative;
+    position: fixed;
+    top: 0;
     z-index: 100;
 
     .mobile-header {
@@ -51,21 +76,18 @@ header {
             height: $height;
         }
     }
-
 }
 
 .dropdown-menu-mobile {
     background-color: $dark-bg-hex;
     width: $height;
     height: $height;
-    color: $light-txt;
     line-height: $height;
     text-align: center;
 }
 
 .main-nav {
     background-color: $dark-bg-hex;
-    color: $light-txt;
     height: 100vh;
 
     ul {
@@ -83,7 +105,7 @@ header {
         li a {
             width: 100%;
             display: inline-block;
-            font-size: $font-size * 2.5;
+            font-size: $font-size;
             line-height: $height;
             margin-top: $height;
         }
@@ -95,41 +117,145 @@ header {
     }
 }
 
+// BODY [PROJECTS]
+.project-article {
+    margin-bottom: $height;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding-bottom: $height;
+    border: 2px solid $light-hex;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom left, $header-hex, $background-hex, $dark-bg-hex);
+    overflow: hidden;
+
+    .project-img-title {
+        position: relative;
+        background: $light-txt;
+
+        h2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: $light-hex;
+            color: $dark-bg-hex;
+            padding: 5px $font-size 0 $font-size;
+            line-height: $font-size * 2;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .project-info p {
+        display: flex;
+        padding: $font-size;
+
+        strong {
+            width: 200px;
+        }
+
+        span {
+            width: 100%;
+        }
+    }
+
+    .project-btns {
+        padding: $font-size;
+        display: flex;
+        justify-content: center;
 
 
-img {
-    width: 350px;
-    height: auto;
+        button:first-of-type {
+            margin-right: $height;
+        }
+
+        button {
+            text-transform: uppercase;
+            font-weight: bold;
+            width: 150px;
+            height: $height;
+            border-radius: 10px;
+            background-image: linear-gradient(to top right, $header-hex, $accent-hex, $light-hex);
+            border: none;
+            box-shadow: 3px 3px 5px 0 $dark-bg-hex;
+            color: $light-txt;
+
+            &:hover {
+                background-image: linear-gradient(to top right, $accent-hex, $light-hex);
+                box-shadow: 0 0 5px 5px $light-hex;
+                color: $dark-bg-hex;
+            }
+        }
+    }
+
+
+
 }
 
-// DESKTOP VERSION
+// FOOTER
+footer {
+    background: $dark-bg-hex;
+    font-size: $font-size * 0.8;
+    height: $height;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+
+
+
+//MOBILE VERSIONS
+@media only screen and (max-width: 600px) {}
+
+// DESKTOP VERSIONS
 @media only screen and (min-width: 960px) {
+    .container p {
+        padding: 0 200px;
+    }
     .dropdown-menu-mobile {
-        display: none;
+        visibility: hidden;
     }
 
     header {
+        width: 100vw;
         display: flex;
         justify-content: space-between;
+        background: $dark-bg-hex;
     }
 
     .main-nav {
+        width: auto;
         height: $height;
 
-    ul {
-        flex-direction: row;
-        height: $height;
+        ul {
+            flex-direction: row;
+            height: $height;
 
-        li {
+            li {
+                width: auto;
+            }
 
+            li a {
+
+                margin-top: 0;
+                padding-left: $height / 2;
+                padding-right: $height / 2;
+            }
         }
-
-        li a {
-            margin-top: 0;
-            margin-left: $height;
-        }
-
-        li>.active {
-
     }
-}}}
+
+    .projects {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .project-article {
+            width: 40%;
+        }
+    }
+
+
+}

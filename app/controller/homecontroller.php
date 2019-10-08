@@ -2,18 +2,18 @@
 
 class homeController extends Controller
 {
-    public function index($id='',$name='')
+    public function contact()
     {
 
-        $this->view('home/index', []);
+        $this->view('home/contact', []);
         $this->view->render();
 
     }
 
-    public function aboutUs()
+    public function aboutme()
     {
 
-        $this->view('home/aboutus', []);
+        $this->view('home/aboutme', []);
         $this->view->render();
     }
 }

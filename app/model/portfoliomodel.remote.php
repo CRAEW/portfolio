@@ -10,9 +10,8 @@ class PortfolioModel {
     {
 
         try {
-            // $data_file = new PDO('mysql:host=www.wendyvancraen.portfolio.be;dbname=wendyvancraen','root','09wendy82');
 
-            $this->pdo = new PDO('mysql:host=127.0.0.1;dbname=wendyvancraen','root','09wendy82');
+            $this->pdo = new PDO('mysql:host=localhost;dbname=wendyv1q_wendyvancraen','wendyv1q','9ERv4hOMm6WQ');
 
             } catch (PDOException $e) {
                 die($e->getMessage());
@@ -23,11 +22,6 @@ class PortfolioModel {
 
     private function load()
     {
-        // if(file_exists(DATA . 'cars.txt'))
-        // {
-        //     $this->inventory = file(DATA . 'cars.txt');
-        // }
-
         $statement = $this->pdo->prepare('select * from portfolio');
         $statement->execute();
 
@@ -54,9 +48,3 @@ class PortfolioModel {
     // delete the inventory
 
 }
-
-
-
-
-
-?>

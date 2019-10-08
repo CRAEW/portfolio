@@ -1,12 +1,16 @@
-let mobileMenu = document.getElementById('dropdown-menu-mobile');
+let hamburger = document.getElementById('hamburger');
 let mainNav = document.getElementById('main-nav');
 
-if(screen.width < 960) {
+// NAV ON MOBILE
+if(screen.width <= 960) {
     mainNav.classList.add('hidden');
-    mobileMenu.addEventListener('click', function(){
+
+    hamburger.addEventListener('click', function(){
         mainNav.classList.toggle('hidden');
     });
-} else {
+} 
+
+// NAV ON DESKTOPS
+if (screen.width > 960){
     mainNav.classList.remove('hidden');
 }
-
