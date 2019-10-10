@@ -104,13 +104,23 @@ header {
 }
 
 // BODY [PROJECTS]
+section {
+    padding: $height 0;
+}
+
 .dark-bg {
     background-image: linear-gradient(to top right, $header-hex, $background-hex, $dark-bg-hex);
     background-size: cover;
     background-repeat: no-repeat;
     color: $light-txt;
-    padding: $height $height;
+    padding: 0 $height $height $height;
     min-height: calc(100vh - 150px);
+}
+
+.light-bg {
+    background-image: linear-gradient(to bottom left, $light-txt, $light-accent);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .project-article {
@@ -189,6 +199,34 @@ header {
 
 }
 
+.dev-skills {
+    filter: grayscale(1);
+    opacity: 0.2;
+
+    .dev-skills-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-wrap: wrap;
+
+        .dev-img {
+            width: calc(100%/3);
+            padding: $height * 0.5;
+            text-align: center;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .dev-img-big {
+            width: calc(100%/3*1.8);
+        }
+    }
+}
+
+
 // FOOTER
 footer {
     background: $dark-bg-hex;
@@ -208,9 +246,10 @@ footer {
 
 // DESKTOP VERSIONS
 @media only screen and (min-width: 960px) {
+
     // GENERAL
-    section  {
-        padding: 0 200px;
+    section {
+        padding: $height 200px 100px 200px;
     }
 
     .intro {
@@ -219,7 +258,7 @@ footer {
 
     h1 {
         font-size: $font-size * 4;
-        line-height: $line-height *3;
+        line-height: $line-height * 3.5;
     }
 
     h2 {
@@ -237,7 +276,8 @@ footer {
         padding-top: $height;
         height: unset;
 
-        .mobile-header, .main-nav ul {
+        .mobile-header,
+        .main-nav ul {
             padding-top: 0;
         }
     }
@@ -273,6 +313,19 @@ footer {
 
         .project-article {
             width: calc(90%/3);
+        }
+    }
+
+    .dev-skills {
+        .dev-skills-wrapper {
+            .dev-img {
+                width: calc(100%/6);
+                padding: $height;
+            }
+
+            .dev-img-big {
+                width: calc(100%/6*1.5);
+            }
         }
     }
 }
