@@ -5,18 +5,15 @@
 // MOBILE FIRST DESIGN
 body {
     width: 100vw;
-    
     height: auto;
     font-size: $font-size;
-    font-family: $body-font;
-    background-image: linear-gradient(to top right, $header-hex, $background-hex, $dark-bg-hex);
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: $light-txt;
+    font-family: $main-font;
 
     .container {
-        margin-top: $height * 2;
+        padding-top: $height * 2;
         min-height: 80vh;
+        background: $light-txt;
+        color: $dark-bg-hex;
     }
 
     h1,
@@ -25,21 +22,24 @@ body {
     h4,
     h5,
     h6 {
-        font-family: $title-font;
+        font-family: $main-font;
     }
 
     h1 {
-        font-size: $font-size * 3;
+        font-size: $font-size * 2;
         text-align: center;
         margin: $height $height;
+        line-height: $line-height * 2;
     }
 
     h2 {
-        font-size: $font-size * 1.2;
+        font-size: $font-size * 2;
+        text-align: center;
+        margin-bottom: $height;
     }
 
     strong {
-        font-weight: bold;
+        font-weight: 700;
     }
 
     a {
@@ -54,22 +54,30 @@ body {
 
 // HEADER
 header {
-    background-color: $header-hex;
+    background-color: $light-txt;
     width: 100vw;
-    height: $height;
+    height: $height * 1.5;
     position: fixed;
     top: 0;
     z-index: 100;
+    color: $dark-bg-hex;
 
     .mobile-header {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        padding-top: $height * 0.5;
+        margin-left: $height * 0.5;
+        margin-right: $height * 0.5;
+
+        i {
+            font-size: 2em;
+        }
     }
 
     .logo {
         height: $height;
         line-height: $height;
+        
 
         img {
             width: auto;
@@ -79,7 +87,7 @@ header {
 }
 
 .dropdown-menu-mobile {
-    background-color: $dark-bg-hex;
+    // background-color: $dark-bg-hex;
     width: $height;
     height: $height;
     line-height: $height;
@@ -87,7 +95,8 @@ header {
 }
 
 .main-nav {
-    background-color: $dark-bg-hex;
+    // background-color: $dark-bg-hex;
+    background-color: $light-txt;
     height: 100vh;
 
     ul {
@@ -97,17 +106,22 @@ header {
         flex-direction: column;
         align-items: center;
 
+        font-size: $font-size * 1.8;
+
         li {
             width: 100%;
             text-align: center;
+            line-height: $height;
+            margin-top: $height * 0.2;
+        }
+        
+        li:first-of-type {
+            margin-top: $height;
         }
 
         li a {
             width: 100%;
-            display: inline-block;
-            font-size: $font-size;
-            line-height: $height;
-            margin-top: $height;
+            display: inline-block;  
         }
 
         li>.active {
@@ -118,21 +132,30 @@ header {
 }
 
 // BODY [PROJECTS]
+.projects {
+    background-image: linear-gradient(to top right, $header-hex, $background-hex, $dark-bg-hex);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: $light-txt;
+    padding: $height $height;
+}
+
+
 .project-article {
     margin-bottom: $height;
     margin-left: 3px;
     margin-right: 3px;
     padding-bottom: $height;
-    border: 2px solid $light-hex;
-    border-radius: 10px;
-    background-image: linear-gradient(to bottom left, $header-hex, $background-hex, $dark-bg-hex);
+    background: $light-txt;
     overflow: hidden;
+    color: $dark-bg-hex;
+    box-shadow: 0px 10px 28px 0 black;
 
     .project-img-title {
         position: relative;
         background: $light-txt;
 
-        h2 {
+        h3 {
             position: absolute;
             bottom: 0;
             left: 0;
@@ -201,7 +224,8 @@ footer {
     height: $height;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+    color: $light-txt;
 }
 
 
@@ -256,6 +280,4 @@ footer {
             width: 40%;
         }
     }
-
-
 }

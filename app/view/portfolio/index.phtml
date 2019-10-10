@@ -1,16 +1,21 @@
 <?php include VIEW . 'header.phtml'; ?>
 
 <div class="container">
-    <h1>My Portfolio</h1>
+    <h1>
+        Hello!
+        <strong>I'm Wendy</strong>. <br>
+        I'm a junior web developer and a graphic designer
+    </h1>
 
     <?php if(array_key_exists('portfolio', $this->view_data)) : ?>
 
     <section class="projects">
+        <h2>my <strong>Portfolio</strong></h2>
         <?php foreach($this->view_data['portfolio'] as $project) : ?>
 
         <article class="project-article">
             <div class="project-img-title">
-                <h2><?= $project->title; ?></h2>
+                <h3><?= $project->title; ?></h3>
 
                 <a href="<?= $project->url; ?>" target="_blank" rel="noreferrer"><img src="../<?= $project->image; ?>"
                         alt="image"></a>

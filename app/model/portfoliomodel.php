@@ -11,7 +11,7 @@ class PortfolioModel {
 
         try {
 
-            $this->pdo = new PDO('mysql:host=127.0.0.1;dbname=wendyvancraen','root','');
+            $this->pdo = new PDO('mysql:host=127.0.0.1;dbname=wendyvancraen','root','09wendy82');
 
             } catch (PDOException $e) {
                 die($e->getMessage());
