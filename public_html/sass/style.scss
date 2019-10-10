@@ -89,6 +89,10 @@ header {
             text-align: center;
             line-height: $height;
             margin-top: $height * 0.2;
+
+            &:hover {
+                background-color: $light-hex;
+            }
         }
 
         li a {
@@ -97,8 +101,7 @@ header {
         }
 
         li>.active {
-            background-color: $light-hex;
-            color: $dark-bg-hex;
+            background-color: $accent-hex;
         }
     }
 }
@@ -200,9 +203,10 @@ section {
 }
 
 .dev-skills {
-    filter: grayscale(1);
-    opacity: 0.2;
-
+    h2 {
+        filter: grayscale(1);
+        opacity: 0.2;
+    }
     .dev-skills-wrapper {
         display: flex;
         justify-content: space-between;
@@ -210,15 +214,23 @@ section {
         flex-wrap: wrap;
 
         .dev-img {
+            filter: grayscale(1);
+            opacity: 0.2;
             width: calc(100%/3);
             padding: $height * 0.5;
             text-align: center;
+
+            &:hover {
+                filter: grayscale(0);
+                opacity: 1;
+            }
 
             img {
                 width: 100%;
                 height: auto;
             }
         }
+
 
         .dev-img-big {
             width: calc(100%/3*1.8);

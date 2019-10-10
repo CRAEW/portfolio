@@ -170,13 +170,15 @@ header .logo img {
   line-height: 50px;
   margin-top: 10px;
 }
+.main-nav ul li:hover {
+  background-color: #20DFE6;
+}
 .main-nav ul li a {
   width: 100%;
   display: inline-block;
 }
 .main-nav ul li > .active {
-  background-color: #20DFE6;
-  color: #062829;
+  background-color: #1BBCC2;
 }
 
 section {
@@ -260,7 +262,7 @@ section {
   color: #062829;
 }
 
-.dev-skills {
+.dev-skills h2 {
   filter: grayscale(1);
   opacity: 0.2;
 }
@@ -271,9 +273,15 @@ section {
   flex-wrap: wrap;
 }
 .dev-skills .dev-skills-wrapper .dev-img {
+  filter: grayscale(1);
+  opacity: 0.2;
   width: calc(100%/3);
   padding: 25px;
   text-align: center;
+}
+.dev-skills .dev-skills-wrapper .dev-img:hover {
+  filter: grayscale(0);
+  opacity: 1;
 }
 .dev-skills .dev-skills-wrapper .dev-img img {
   width: 100%;
