@@ -18,17 +18,18 @@
 
 <body>
     <header>
-        <div class="mobile-header">
-            <div class="logo">
-                <img src="/images/logo.jpeg" alt="logo Wendy Van Craen">
-            </div>
-
-            <div id="hamburger" class="dropdown-menu-mobile"><i class="fa fa-bars"></i></div>
+        <div class="logo">
+            <img src="/images/logo.jpeg" alt="logo Wendy Van Craen">
         </div>
 
+        <div id="hamburger" class="hamburger">
+                <div class="nav-line"></div>
+                <div class="nav-line"></div>
+                <div class="nav-line"></div>
+            </div>
 
         <nav id="main-nav" class='main-nav'>
-            <ul>
+            <ul class="main-nav-links">
                 <li><a href="/portfolio/index"
                         <?php echo ($action == 'portfolio/index' ? 'class=active' : ''); ?>>Portfolio</a></li>
                 <li><a href="/home/aboutme" <?php echo ($action == 'home/aboutme' ? 'class=active' : ''); ?>>About me</a></li>

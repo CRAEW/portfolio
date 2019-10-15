@@ -1,7 +1,7 @@
 @import 'reset';
 @import 'variables';
 @import 'typography';
-// @import 'animations';
+@import 'nav';
 
 
 
@@ -20,96 +20,7 @@ body {
     }
 }
 
-.hidden {
-    visibility: hidden;
-}
-
-// HEADER
-header {
-    background-color: $light-txt;
-    width: 100vw;
-    height: $height * 1.5;
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    color: $dark-bg-hex;
-
-    .mobile-header {
-        display: flex;
-        justify-content: space-between;
-        padding-top: $height * 0.5;
-        margin-left: $height * 0.5;
-        margin-right: $height * 0.5;
-        position: relative;
-        z-index: 200;
-
-        i {
-            font-size: 2em;
-        }
-    }
-
-    .logo {
-        height: $height;
-        line-height: $height;
-
-        img {
-            width: auto;
-            height: $height;
-        }
-    }
-}
-
-.dropdown-menu-mobile {
-    // background-color: $dark-bg-hex;
-    width: $height;
-    height: $height;
-    line-height: $height;
-    text-align: center;
-}
-
-.main-nav {
-    // background-color: $dark-bg-hex;
-    background-color: $light-txt;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 150;
-
-    ul {
-        list-style-type: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        font-size: $font-size * 1.8;
-        padding-top: $height * 2;
-
-        li {
-            width: 100%;
-            text-align: center;
-            line-height: $height;
-            margin-top: $height * 0.2;
-
-            &:hover {
-                background-color: $light-hex;
-            }
-        }
-
-        li a {
-            width: 100%;
-            display: inline-block;
-        }
-
-        li>.active {
-            background-color: $accent-hex;
-        }
-    }
-}
-
-// BODY [PROJECTS]
+// MAIN BODY [PROJECTS]
 section {
     padding: $height 0;
 }
@@ -162,14 +73,21 @@ section {
     .project-info {
         height: 300px;
         p {
-            display: flex;
             padding: $font-size;
 
             strong {
-                width: 200px;
+                display: inline-block;
+                margin-right: 20px;
             }
 
             span {
+                width: 100%;
+            }
+        }
+
+        p:nth-child(2) {
+            strong, span {
+                display: block;
                 width: 100%;
             }
         }
@@ -191,7 +109,6 @@ section {
             font-weight: bold;
             width: 150px;
             height: $height;
-            border-radius: 10px;
             background-image: linear-gradient(to top right, $header-hex, $accent-hex, $light-hex);
             border: none;
             box-shadow: 3px 3px 5px 0 $dark-bg-hex;
@@ -204,9 +121,6 @@ section {
             }
         }
     }
-
-
-
 }
 
 .dev-skills {
@@ -257,12 +171,6 @@ footer {
     color: $light-txt;
 }
 
-
-
-
-//MOBILE VERSIONS
-@media only screen and (max-width: 600px) {}
-
 // DESKTOP VERSIONS
 @media only screen and (min-width: 960px) {
 
@@ -282,46 +190,6 @@ footer {
 
     h2 {
         font-size: $font-size * 3;
-    }
-
-    .dropdown-menu-mobile {
-        visibility: hidden;
-    }
-
-    // HEADER SECTION
-    header {
-        display: flex;
-        justify-content: space-between;
-        padding-top: $height;
-        height: unset;
-
-        .mobile-header,
-        .main-nav ul {
-            padding-top: 0;
-        }
-    }
-
-    .main-nav {
-        width: auto;
-        height: $height;
-        position: unset;
-        padding-right: $height;
-
-        ul {
-            flex-direction: row;
-            height: $height;
-
-            li {
-                width: auto;
-                margin-top: 0;
-            }
-
-            li a {
-                margin-top: 0;
-                padding-left: $height / 2;
-                padding-right: $height / 2;
-            }
-        }
     }
 
     // PROJECTS SECTION
