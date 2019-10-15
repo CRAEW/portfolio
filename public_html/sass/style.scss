@@ -1,6 +1,9 @@
 @import 'reset';
 @import 'variables';
 @import 'typography';
+// @import 'animations';
+
+
 
 // MOBILE FIRST DESIGN
 body {
@@ -156,18 +159,22 @@ section {
         }
     }
 
-    .project-info p {
-        display: flex;
-        padding: $font-size;
+    .project-info {
+        height: 300px;
+        p {
+            display: flex;
+            padding: $font-size;
 
-        strong {
-            width: 200px;
-        }
+            strong {
+                width: 200px;
+            }
 
-        span {
-            width: 100%;
+            span {
+                width: 100%;
+            }
         }
     }
+    
 
     .project-btns {
         padding: $font-size;
@@ -341,3 +348,4 @@ footer {
         }
     }
 }
+

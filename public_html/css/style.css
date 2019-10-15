@@ -227,6 +227,9 @@ section {
   width: 100%;
   height: auto;
 }
+.project-article .project-info {
+  height: 300px;
+}
 .project-article .project-info p {
   display: flex;
   padding: 16px;
